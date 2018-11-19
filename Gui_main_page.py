@@ -23,7 +23,8 @@ canvas = tk.Canvas(window, bg='white',height=200, width=500)
 canvas.place(x=50, y=150)
 
 
-#function to be called when mouse is clicked
+#function to be called when mouse is clicked 
+#updated by Xiaojian
 def hit_me1():
     File = filedialog.askopenfilename(parent=window, initialdir="/",title='Choose an image.')
     filename = ImageTk.PhotoImage(Image.open(File))
