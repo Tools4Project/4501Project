@@ -1,6 +1,7 @@
 import tkinter as tk
 from tkinter import filedialog
 from PIL import Image, ImageTk
+import tkinter as tk
 window = tk.Tk()
 window.title('Welcome to our project!')
 
@@ -29,13 +30,17 @@ def hit_me1():
     canvas.image = filename  # <--- keep reference of your image
     canvas.create_image(100,1,anchor='n',image=filename)
 
+# Set upload art button
+def hit_me1():
+    pass
+
 b_upload_art = tk.Button(window, text='Upload Art', font=('Arial', 12), width=30, height=3, command=hit_me1)
 b_upload_art.place(x=50,y=450)
 
 # Set upload pic button
 def hit_me2():
     pass
-    
+
 
 b_upload_pic = tk.Button(window, text='Upload Art', font=('Arial', 12), width=30, height=3, command=hit_me2)
 b_upload_pic.place(x=300,y=450)
@@ -48,6 +53,4 @@ b_upload_pic = tk.Button(window, text='Process', font=('Arial', 12), width=30, h
 b_upload_pic.place(x=550,y=450)
 
 window.mainloop()
-
-
 
