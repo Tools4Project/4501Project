@@ -35,12 +35,18 @@ def camera():
 # function to be called when mouse is clicked
 def hit_me1():
     File = filedialog.askopenfilename(parent=window, initialdir="./", title='Choose an image.')
-    filename = ImageTk.PhotoImage(Image.open(File))
+    img = Image.open(File)
+    filename = ImageTk.PhotoImage(img)#Image.open(File)
+   
+    
     #Save the art_fp
     global art_fp
     art_fp = File
+    canvas = tk.Canvas(window, height=300, width=200) # canvas size
+    canvas.create_rectangle(3, 3, 197, 297, width=0.5,dash=(4,4))
+    canvas.place(x=40, y=150) #canvas position
     canvas.image = filename  # <--- keep reference of your image
-    canvas.create_image(50, 1, anchor='n', image=filename)
+    canvas.create_image(100, 5, anchor='n', image=filename) # Anchor points (the middle point at the top of the N picture) is placed in the 250,0 coordinates.
 
 
 # Set upload pic button
@@ -60,8 +66,12 @@ def upload_pic():
     #Save pic_fp
     global pic_fp
     pic_fp = File
+    canvas = tk.Canvas(window, height=300, width=200) # canvas size
+    canvas.create_rectangle(3, 3, 197, 297, width=0.5,dash=(4,4))
+    canvas.place(x=290, y=150) #canvas position
     canvas.image = filename  # <--- keep reference of your image
-    canvas.create_image(50, 1, anchor='n', image=filename)
+    canvas.create_image(100, 5, anchor='n', image=filename) # Anchor points (the middle point at the top of the N picture) is placed in the 250,0 coordinates.
+  
     pass
 
 
@@ -301,16 +311,15 @@ group_mem = tk.Label(window, text=text_, bg='white', font=('Arial', 14), width=4
 group_mem.place(x=400, y=70)
 
 # Set the canvas to show the process of deep learning
-canvas = tk.Canvas(window, bg='white', height=200, width=500)
-canvas.place(x=50, y=150)
 
-b_upload_art = tk.Button(window, text='Upload Art', font=('Arial', 12), width=30, height=3, command=hit_me1)
-b_upload_art.place(x=50, y=450)
 
-b_upload_pic = tk.Button(window, text='Upload Yor Picture', font=('Arial', 12), width=30, height=3, command=hit_me2)
-b_upload_pic.place(x=300, y=450)
+b_upload_art = tk.Button(window, text='Upload Art', font=('Arial', 11), width=15, height=5, command=hit_me1)
+b_upload_art.place(x=70, y=500)
 
-b_upload_pic = tk.Button(window, text='Process', font=('Arial', 12), width=30, height=3, command=cnn_paint_style)
-b_upload_pic.place(x=550, y=450)
+b_upload_pic = tk.Button(window, text='Upload Yor Picture', font=('Arial', 11), width=15, height=5, command=hit_me2)
+b_upload_pic.place(x=340, y=500)
+
+b_upload_pic = tk.Button(window, text='Process', font=('Arial', 11), width=15, height=5, command=cnn_paint_style)
+b_upload_pic.place(x=600, y=500)
 
 window.mainloop()
