@@ -36,6 +36,7 @@ def camera():
 def hit_me1():
     File = filedialog.askopenfilename(parent=window, initialdir="./", title='Choose an image.')
     img = Image.open(File)
+    img = img.resize((192, 292), Image.ANTIALIAS) #Reshape the picture into a fixed window
     filename = ImageTk.PhotoImage(img)#Image.open(File)
    
     
@@ -43,10 +44,11 @@ def hit_me1():
     global art_fp
     art_fp = File
     canvas = tk.Canvas(window, height=300, width=200) # canvas size
-    canvas.create_rectangle(3, 3, 197, 297, width=0.5,dash=(4,4))
+    canvas.create_rectangle(0, 0, 200, 300, fill="#476042") #set canas background and proper window to show graph
+
     canvas.place(x=40, y=150) #canvas position
     canvas.image = filename  # <--- keep reference of your image
-    canvas.create_image(100, 5, anchor='n', image=filename) # Anchor points (the middle point at the top of the N picture) is placed in the 250,0 coordinates.
+    canvas.create_image(102, 6, anchor='n', image=filename) # Anchor points (the middle point at the top of the N picture) is placed in the 250,0 coordinates.
 
 
 # Set upload pic button
@@ -62,15 +64,17 @@ def hit_me2():
 
 def upload_pic():
     File = filedialog.askopenfilename(parent=window, initialdir="./", title='Choose an image.')
-    filename = ImageTk.PhotoImage(Image.open(File))
+    img = Image.open(File)
+    img = img.resize((192, 292), Image.ANTIALIAS)
+    filename = ImageTk.PhotoImage(img)
     #Save pic_fp
     global pic_fp
     pic_fp = File
     canvas = tk.Canvas(window, height=300, width=200) # canvas size
-    canvas.create_rectangle(3, 3, 197, 297, width=0.5,dash=(4,4))
+    canvas.create_rectangle(0, 0, 200, 300, fill="#476042")
     canvas.place(x=290, y=150) #canvas position
     canvas.image = filename  # <--- keep reference of your image
-    canvas.create_image(100, 5, anchor='n', image=filename) # Anchor points (the middle point at the top of the N picture) is placed in the 250,0 coordinates.
+    canvas.create_image(102, 6, anchor='n', image=filename) # Anchor points (the middle point at the top of the N picture) is placed in the 250,0 coordinates.
   
     pass
 
