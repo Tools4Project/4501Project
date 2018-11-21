@@ -1,4 +1,4 @@
-# 4501Project：Image Style Transfer and Building a Gui
+# 4501Project：Image Style Transfer and Gui Building
 ## Group Members: Tao Li, Jiaxing Wan, Jiali Sun, Xiaojian Fan
 ## Main Objective
 The main objective of this project is to enable users to transfer the style of their images, either an uploaded image or an image captured by their computer built-in camera when they click on the button `upload via camera` into any style they prefer, for example, it can provide the users with the magic capacity to paint like Vincent van Gogh!<br> 
@@ -14,7 +14,10 @@ You can now go to the **Example** section to firstly have a basic idea before re
 The main interface is shown as below:<br>
 插入主界面图片！！<br>
 <br>
-As can be seen, there are three buttons on the main interface: 
+As can be seen, there are three buttons on the main interface: <br>
+`Upload Art`, when this button is clicked, it allows user to select an image (could be the famous artwork or any other images that the user want to extract the image's style) from their own computer, which if satisfies the format requirement, will be displayed on the left-hand-side of the interface. One important thing to be notified here is that only the 'jpg','jpeg','png','bmp' type of file can be uploaded, if the user try to upload one file other than these specified four or no file is selected, there will be a error message box popuped with the massage shown as "Please try to upload a 'jpg','jpeg','png','bmp' file.". <br>
+`Upload your picture`, the button in the middle, when this one is clicked, there will be a pop-up window with two other buttons indicating the two ways that the user can choose between to upload one picture that the user want to extract content information from: `Upload via local`: choose one from users' computer, `Upload via camera`: open computer's camera to take a photo. <br>
+
 
 
 
