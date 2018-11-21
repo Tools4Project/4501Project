@@ -31,7 +31,10 @@ example<br>
 <br>
 
 ## Requirements
-requirements<br>
+Download opencv, using code `pip install cv2`<br>
+Download tensorflow, using code `pip install tensorflow`, server for CNN work<br>
+
+
 <br>
 
 
