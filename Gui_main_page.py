@@ -1,7 +1,7 @@
 import tkinter as tk
 from tkinter import filedialog
 from PIL import Image, ImageTk
-
+import tkinter.messagebox 
 
 def camera():
     import cv2
@@ -35,9 +35,12 @@ def camera():
 # function to be called when mouse is clicked
 def hit_me1():
     File = filedialog.askopenfilename(parent=window, initialdir="./", title='Choose an image.')
-    img = Image.open(File)
-    img = img.resize((192, 292), Image.ANTIALIAS) #Reshape the picture into a fixed window
-    filename = ImageTk.PhotoImage(img)#Image.open(File)
+    if File.lower().endswith('jpg') or File.lower().endswith('jpeg') or File.lower().endswith('png') or File.lower().endswith('bmp'):
+        img = Image.open(File)
+        img = img.resize((192, 292), Image.ANTIALIAS) #Reshape the picture into a fixed window
+        filename = ImageTk.PhotoImage(img)#Image.open(File)
+    else:
+        tkinter.messagebox.showinfo(title='Error', message="Please try to upload a 'jpg','jpeg','png','bmp' file")
    
     
     #Save the art_fp
@@ -64,9 +67,12 @@ def hit_me2():
 
 def upload_pic():
     File = filedialog.askopenfilename(parent=window, initialdir="./", title='Choose an image.')
-    img = Image.open(File)
-    img = img.resize((192, 292), Image.ANTIALIAS)
-    filename = ImageTk.PhotoImage(img)
+    if File.lower().endswith('jpg') or File.lower().endswith('jpeg') or File.lower().endswith('png') or File.lower().endswith('bmp'):
+        img = Image.open(File)
+        img = img.resize((192, 292), Image.ANTIALIAS) #Reshape the picture into a fixed window
+        filename = ImageTk.PhotoImage(img)#Image.open(File)
+    else:
+        tkinter.messagebox.showinfo(title='Error', message="Please try to upload a 'jpg','jpeg','png','bmp' file")
     #Save pic_fp
     global pic_fp
     pic_fp = File
