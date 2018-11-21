@@ -15,8 +15,21 @@ The main interface is shown as below:<br>
 插入主界面图片！！<br>
 <br>
 As can be seen, there are three buttons on the main interface: <br>
+<br>
 `Upload Art`, when this button is clicked, it allows user to select an image (could be the famous artwork or any other images that the user want to extract the image's style) from their own computer, which if satisfies the format requirement, will be displayed on the left-hand-side of the interface. One important thing to be notified here is that only the 'jpg','jpeg','png','bmp' type of file can be uploaded, if the user try to upload one file other than these specified four or no file is selected, there will be a error message box popuped with the massage shown as "Please try to upload a 'jpg','jpeg','png','bmp' file.". <br>
-`Upload your picture`, the button in the middle, when this one is clicked, there will be a pop-up window with two other buttons indicating the two ways that the user can choose between to upload one picture that the user want to extract content information from: `Upload via local`: choose one from users' computer, `Upload via camera`: open computer's camera to take a photo. <br>
+<br>
+`Upload your picture`, the button in the middle, when this one is clicked, there will be a pop-up window with two other buttons indicating the two ways that the user can choose between to upload one picture that the user want to extract content information from: `Upload via local`: choose one from users' computer, `Upload via camera`: open computer's camera to take a photo. After one picture is seccessfully uploaded, it will be shown in the right-hand-side of the interface.<br>
+<br>
+After two pictures both have been uploaded, the user can finally click `process` button, a window will be pop-upped, showing the users with ten intermediate points in the convolutional process and finally end up with the final result displayed on the screen. In this way, the in addition to the final result, users can also see the convolutional process, which make it more transparent and interesting. <br>
+<br>
+## Code Explaination
+<br>
+## Examples
+<br>
+## Requirements
+<br>
+
+
 
 
 
