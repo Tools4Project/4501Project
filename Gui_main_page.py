@@ -2,7 +2,7 @@ import tkinter as tk
 from tkinter import filedialog
 from PIL import Image, ImageTk
 import tkinter.messagebox 
-
+import cv2
 def camera():
     import cv2
 
@@ -21,6 +21,7 @@ def camera():
             if k == ord('q'):
                 break
             elif k == ord('c'):
+                frame = cv2.resize(frame, (256,144), interpolation=cv2.INTER_CUBIC)
                 cv2.imwrite('./pic'+str(count)+'.jpg', frame)
                 count += 1
     global filename
@@ -30,9 +31,22 @@ def camera():
     pic_fp = filename
     cap.release()
     cv2.destroyAllWindows()
+    
+    
+    #add the third canvas above the process button and display trained graphs
+    img = Image.open(pic_fp)
+    img = img.resize((192, 292), Image.ANTIALIAS)
+    filename = ImageTk.PhotoImage(img)
+
+    canvas = tk.Canvas(window, height=300, width=200) # canvas size
+    canvas.create_rectangle(0, 0, 200, 300, fill="#476042")
+    canvas.place(x=290, y=150) #canvas position
+    canvas.image = filename  # <--- keep reference of your image
+    canvas.create_image(102, 6, anchor='n', image=filename)
 
 
 # function to be called when mouse is clicked
+# add the first canvas above the upload-art-graph button
 def hit_me1():
     File = filedialog.askopenfilename(parent=window, initialdir="./", title='Choose an image.')
     if File.lower().endswith('jpg') or File.lower().endswith('jpeg') or File.lower().endswith('png') or File.lower().endswith('bmp'):
@@ -41,7 +55,7 @@ def hit_me1():
         filename = ImageTk.PhotoImage(img)#Image.open(File)
     else:
         tkinter.messagebox.showinfo(title='Error', message="Please try to upload a 'jpg','jpeg','png','bmp' file")
-   
+        return
     
     #Save the art_fp
     global art_fp
@@ -54,17 +68,18 @@ def hit_me1():
     canvas.create_image(102, 6, anchor='n', image=filename) # Anchor points (the middle point at the top of the N picture) is placed in the 250,0 coordinates.
 
 
-# Set upload pic button
+# Set upload local pic button
+
 def hit_me2():
     window1 = tk.Toplevel(window)
     window1.title('Upload your own picture!')
     window1.geometry('400x300')
-    b_via_local = tk.Button(window1, text='Upload via local', font=('Arial', 12), width=30, height=3, command=upload_pic)
-    b_via_camera = tk.Button(window1, text='Upload via camera', font=('Arial', 12), width=30, height=3, command=camera)
+    b_via_local = tk.Button(window1, text='Upload via local', font=('Times', 12), width=30, height=3, command=upload_pic)
+    b_via_camera = tk.Button(window1, text='Upload via camera', font=('Times', 12), width=30, height=3, command=camera)
     b_via_local.place(x=100, y=80)
     b_via_camera.place(x=100, y=160)
 
-
+# set the second canvas to display local graph above the locat-graph-button
 def upload_pic():
     File = filedialog.askopenfilename(parent=window, initialdir="./", title='Choose an image.')
     if File.lower().endswith('jpg') or File.lower().endswith('jpeg') or File.lower().endswith('png') or File.lower().endswith('bmp'):
@@ -73,6 +88,7 @@ def upload_pic():
         filename = ImageTk.PhotoImage(img)#Image.open(File)
     else:
         tkinter.messagebox.showinfo(title='Error', message="Please try to upload a 'jpg','jpeg','png','bmp' file")
+        return   
     #Save pic_fp
     global pic_fp
     pic_fp = File
@@ -302,6 +318,24 @@ def cnn_paint_style():
             timestr = time.strftime("%Y%m%d_%H%M%S")
             output_file = path_output+'/'+timestr+'_'+'%s.jpg' % (i*n_iterations_checkpoint)
             imsave(output_file, img_output)
+            
+            # Display the in-progress images
+            img = cv2.imread(output_file)
+            cv2.imshow('Processing...', img)
+            cv2.waitKey(10)
+
+        # Close window when the style transformation is finished
+        cv2.destroyAllWindows()
+
+        # Display final result in the main window
+        img_ul = Image.open(output_file)
+        img = img_ul.resize((192, 292), Image.ANTIALIAS)
+        filename = ImageTk.PhotoImage(img)
+        canvas = tk.Canvas(window, height=300, width=200) # canvas size
+        canvas.create_rectangle(0, 0, 200, 300, fill="#476042")
+        canvas.place(x=540, y=150) #canvas position
+        canvas.image = filename  # <--- keep reference of your image
+        canvas.create_image(102, 6, anchor='n', image=filename)
 
 
 window = tk.Tk()
@@ -312,24 +346,24 @@ window.geometry('800x600')
 
 # set the header
 title_ = 'Welcome to our project (Paint Style Transformation)'
-header = tk.Label(window, text=title_, bg='green', font=('Arial', 22), width=50, height=2)
-header.place(x=65, y=10)
+header = tk.Label(window, text=title_, font=('Times', 22), width=50, height=2)
+header.place(x=150, y=10)
 
 # set the Author
 text_ = 'Author: Tao Li, Jianxing Wan, Xiaojian Fan, Jiali Sun'
-group_mem = tk.Label(window, text=text_, bg='white', font=('Arial', 14), width=45, height=1)
+group_mem = tk.Label(window, text=text_, bg='white', font=('Times', 14), width=45, height=1)
 group_mem.place(x=400, y=70)
 
 # Set the canvas to show the process of deep learning
 
 
-b_upload_art = tk.Button(window, text='Upload Art', font=('Arial', 11), width=15, height=5, command=hit_me1)
+b_upload_art = tk.Button(window, text='Upload Art', font=('Times', 11), width=15, height=5, command=hit_me1)
 b_upload_art.place(x=70, y=500)
 
-b_upload_pic = tk.Button(window, text='Upload Yor Picture', font=('Arial', 11), width=15, height=5, command=hit_me2)
+b_upload_pic = tk.Button(window, text='Upload Yor Picture', font=('Times', 11), width=15, height=5, command=hit_me2)
 b_upload_pic.place(x=340, y=500)
 
-b_upload_pic = tk.Button(window, text='Process', font=('Arial', 11), width=15, height=5, command=cnn_paint_style)
+b_upload_pic = tk.Button(window, text='Process', font=('Times', 11), width=15, height=5, command=cnn_paint_style)
 b_upload_pic.place(x=600, y=500)
 
 window.mainloop()
