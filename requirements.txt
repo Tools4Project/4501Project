@@ -1,0 +1,4 @@
+Python packages to be installed:
+- tensorflow
+- cv2
+- Pillow
