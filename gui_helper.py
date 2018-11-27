@@ -63,7 +63,7 @@ def hit_me1_fn(window):
         # Save the art_fp
         global_dict["art_fp"] = file
         canvas = tk.Canvas(window, height=300, width=200)  # canvas size
-        canvas.create_rectangle(0, 0, 200, 300, fill="#476042")  # set canas background and proper window to show graph
+        canvas.create_rectangle(0, 0, 200, 300, fill="#476042")  # set canvas background and proper window to show graph
 
         canvas.place(x=40, y=150)  # canvas position
         canvas.image = filename  # <--- keep reference of your image
@@ -83,8 +83,10 @@ def hit_me2_fn(window):
         window1.geometry('400x300')
         b_via_local = tk.Button(window1, text='Upload via local', font=('Times', 12), width=30, height=3,
                                 command=upload_pic_fn(window))
-        b_via_camera = tk.Button(window1, text='Upload via camera', font=('Times', 12), width=30, height=3,
+        b_via_camera = tk.Button(window1, text="Upload via camera ", font=('Times', 12), width=30, height=3,
                                  command=camera_fn(window))
+        instr_photo = tk.Label(window1, text="'q': to exit; 'c': take a photo", font=('Symbol', 12), width=30, height=1)
+        instr_photo.place(x=100, y=140)
         b_via_local.place(x=100, y=80)
         b_via_camera.place(x=100, y=160)
 

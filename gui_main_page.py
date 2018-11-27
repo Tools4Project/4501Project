@@ -12,7 +12,7 @@ def main():
 
     canvas = tk.Canvas(window, height=600, width=1000)
     canvas.pack()
-    image = Image.open('background.jpeg')
+    image = Image.open('./background.jpg')
     image = image.resize((800, 600), Image.ANTIALIAS)
     photo_image = ImageTk.PhotoImage(image)
     canvas.create_image(0, 0, image=photo_image, anchor="nw")

@@ -12,8 +12,10 @@ from PIL import Image, ImageTk
 
 
 def cnn_paint_style_fn(window, global_dict):
-    def cnn_paint_style():
 
+    def cnn_paint_style():
+        #Painting Like Van Gogh with Convolutional Neural Networks
+        #Retrieved from http://www.subsubroutine.com/sub-subroutine/2016/11/12/painting-like-van-gogh-with-convolutional-neural-networks
         # Inputs
         file_content_image = global_dict["pic_fp"]
         file_style_image = global_dict["art_fp"]
