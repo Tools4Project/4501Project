@@ -1,5 +1,8 @@
 # 4501Project：Paint Style Transformation
-## Section1, Group Name: PythonGroup, Group Members: Tao Li, Jiaxing Wan, Jiali Sun, Xiaojian Fan
+## Section1
+## Group Name: PythonGroup
+## Group Members: Tao Li, Jiaxing Wan, Jiali Sun, Xiaojian Fan
+<br>
 ## Main Objective
 The main objective of this project is to enable users to transfer the style of their images, either an uploaded image or an image captured by their computer built-in camera when they click on the button `upload via camera` into any style they prefer, for example, it can provide the users with the magic capacity to paint like Vincent van Gogh!<br> 
 <br>
@@ -11,6 +14,7 @@ CNN is a technique introduced by Gatys et al. (2015) in their paper 'Image Style
       
 ## GUI
 The main interface is shown as below:<br>
+<br>
 ![](https://github.com/Tools4Project/4501Project/blob/master/homepage.png)  <br>
 <br>
 As can be seen, there are three buttons on the main interface: <br>
@@ -21,6 +25,7 @@ As can be seen, there are three buttons on the main interface: <br>
 <br>
 After two pictures both have been uploaded, the user can finally click `process` button, a window will pop-up, showing the users with ten intermediate points in the convolutional process and finally end up with the final result displayed on the right-hand side of the main interface. The window showing the convolutional process will be closed automatically. In this way, in addition to the final result, users can also see the convolutional process, which make it more transparent and interesting. <br>
 The final result window is as the following:<br>
+<br>
 ![](https://github.com/Tools4Project/4501Project/blob/master/result.jpeg)  
 <br>
 
