@@ -34,7 +34,7 @@ The final result window is as the following:<br>
 
 
 ## Run Instructions
-Download the 'imagenet-vgg-verydeep-19' file introduced by Karen et al.(2014) into the directory (main directory) in which you will implement main functional files. Then, use the bash command `cd` to the main directory, `git init` initialize the main directory and produce git environment. Meanwhile, under the directory, use `git clone git@github.com:Tools4Project/4501Project.git` command to download the main functional files. Following this, use the code `python3.6 gui_main_page.py` to run the project, then the main gui will appear. Detailed operations of GUI have been shown above in 'GUI' section.
+Download [imagenet-vgg-verydeep-19](http://www.vlfeat.org/matconvnet/pretrained/) into the directory (main directory) in which you will implement main functional files. Then, use the bash command `cd` to the main directory, `git init` initialize the main directory and produce git environment. Meanwhile, under the directory, use `git clone git@github.com:Tools4Project/4501Project.git` command to download the main functional files. Following this, use the code `python3.6 gui_main_page.py` to run the project, then the main gui will appear. Detailed operations of GUI have been shown above in 'GUI' section.
 <br>
 
 
