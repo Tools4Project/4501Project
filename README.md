@@ -1,7 +1,7 @@
 # 4501Project：Paint Style Transformation
 ### Section1
 ### Group Name: PythonGroup
-### Group Members: Tao Li, Jiaxing Wan, Jiali Sun, Xiaojian Fan
+### Group Members: Tao Li, Jianxing Wan, Jiali Sun, Xiaojian Fan
 <br>
 
 ## Main Objective
