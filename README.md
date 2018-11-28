@@ -1,13 +1,15 @@
 # 4501Project：Paint Style Transformation
-## Section1
-## Group Name: PythonGroup
-## Group Members: Tao Li, Jiaxing Wan, Jiali Sun, Xiaojian Fan
+### Section1
+### Group Name: PythonGroup
+### Group Members: Tao Li, Jiaxing Wan, Jiali Sun, Xiaojian Fan
 <br>
+
 ## Main Objective
 The main objective of this project is to enable users to transfer the style of their images, either an uploaded image or an image captured by their computer built-in camera when they click on the button `upload via camera` into any style they prefer, for example, it can provide the users with the magic capacity to paint like Vincent van Gogh!<br> 
 <br>
 A GUI is built to make it more easily to be operated by the users, especially the layman without the necessity to understand the code. Additionally, the working process and the final result can be more observable.<br>
 <br>
+
 ## Convolutional Neural Network (CNN)
 CNN is a technique introduced by Gatys et al. (2015) in their paper 'Image Style Transfer Using Convolutional Neural Network'. The algotithm allows us to separate and recombine the image content and style of natural images. In another words, it is capable of extracting content information from a image and then extract style information from a famous artwork, then combine them together to produce a new image that possesses the content of the photo and the appearance of a given artwork. The key idea backed up this algorithm is to optimise an image with the objective of matching desired CNN feature distributions, which involves both the photo's content information and the artwork's style information. The team realizes the function that image style transfer mainly by cnn_paint_style function from the website about "Painting Like Van Gogh with Convolutional Neural Networks"(2016).<br>
 <br>
@@ -23,7 +25,8 @@ As can be seen, there are three buttons on the main interface: <br>
 <br>
 `Upload your picture`, the button in the middle, when this one is clicked, there will be a pop-up window with two other buttons indicating the two ways that the user can choose between to upload one picture that the user want to extract content information from: `Upload via local`: choose one from users' computer, `Upload via camera`: open computer's camera to take a photo. The user can press "c" to take a photo and press "q" to exit the camera interface. After one picture is seccessfully uploaded, it will be shown in the middle of the interface.<br>
 <br>
-After two pictures both have been uploaded, the user can finally click `process` button, a window will pop-up, showing the users with ten intermediate points in the convolutional process and finally end up with the final result displayed on the right-hand side of the main interface. The window showing the convolutional process will be closed automatically. In this way, in addition to the final result, users can also see the convolutional process, which make it more transparent and interesting. <br>
+After two pictures both have been uploaded, the user can finally click `process` button, a window will pop-up, showing the users with ten intermediate points in the convolutional process and finally end up with the final result displayed on the right-hand side of the main interface. The window showing the convolutional process will be closed automatically. In this way, in addition to the final result, users can also see the convolutional process, which make it more transparent and interesting.<br>
+<br>
 The final result window is as the following:<br>
 <br>
 ![](https://github.com/Tools4Project/4501Project/blob/master/result.jpeg)  
