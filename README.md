@@ -8,12 +8,10 @@ A GUI is built to make it more easily to be operated by the users, especially th
 ## Convolutional Neural Network (CNN)
 CNN is a technique introduced by Gatys et al. (2015) in their paper 'Image Style Transfer Using Convolutional Neural Network'. The algotithm allows us to separate and recombine the image content and style of natural images. In another words, it is capable of extracting content information from a image and then extract style information from a famous artwork, then combine them together to produce a new image that possesses the content of the photo and the appearance of a given artwork. The key idea backed up this algorithm is to optimise an image with the objective of matching desired CNN feature distributions, which involves both the photo's content information and the artwork's style information. The team realizes the function that image style transfer mainly by cnn_paint_style function from the website about "Painting Like Van Gogh with Convolutional Neural Networks"(2016).<br>
 <br>
-cnn_paint_style() reference:<br>
-<br>
       
 ## GUI
 The main interface is shown as below:<br>
-![](https://github.com/Tools4Project/4501Project/blob/master/background.jpg)  <br>
+![](https://github.com/Tools4Project/4501Project/blob/master/homepage.png)  <br>
 <br>
 As can be seen, there are three buttons on the main interface: <br>
 <br>
@@ -22,6 +20,10 @@ As can be seen, there are three buttons on the main interface: <br>
 `Upload your picture`, the button in the middle, when this one is clicked, there will be a pop-up window with two other buttons indicating the two ways that the user can choose between to upload one picture that the user want to extract content information from: `Upload via local`: choose one from users' computer, `Upload via camera`: open computer's camera to take a photo. The user can press "c" to take a photo and press "q" to exit the camera interface. After one picture is seccessfully uploaded, it will be shown in the middle of the interface.<br>
 <br>
 After two pictures both have been uploaded, the user can finally click `process` button, a window will pop-up, showing the users with ten intermediate points in the convolutional process and finally end up with the final result displayed on the right-hand side of the main interface. The window showing the convolutional process will be closed automatically. In this way, in addition to the final result, users can also see the convolutional process, which make it more transparent and interesting. <br>
+The final result window is as the following:<br>
+![](https://github.com/Tools4Project/4501Project/blob/master/result.jpeg)  
+<br>
+
 
 ## Run Instructions
 Download the 'imagenet-vgg-verydeep-19' file introduced by Karen et al.(2014) into the directory (main directory) in which you will implement main functional files. Then, use the bash command `cd` to the main directory, `git init` initialize the main directory and produce git environment. Meanwhile, under the directory, `git pull origin master` download the main functional files. Following this, use the code `python3.6` plus the main functional file name `gui_main_page.py` to run the project, the main gui will appear. About the GUI operations, it has shown above in `## GUI`.
