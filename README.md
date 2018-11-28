@@ -15,7 +15,7 @@ cnn_paint_style() reference:<br>
       
 ## GUI
 The main interface is shown as below:<br>
-![](https://github.com/scarlettjiali/4501Project/raw/master/background.jpg)  <br>
+![](https://github.com/Tools4Project/4501Project/blob/master/background.jpg)  <br>
 <br>
 As can be seen, there are three buttons on the main interface: <br>
 <br>
