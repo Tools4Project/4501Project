@@ -6,11 +6,9 @@ The main objective of this project is to enable users to transfer the style of t
 A GUI is built to make it more easily to be operated by the users, especially the layman without the necessity to understand the code. Additionally, the working process and the final result can be more observable.<br>
 <br>
 ## Convolutional Neural Network (CNN)
-CNN is a technique introduced by Gatys et al. (2015) in their paper 'Image Style Transfer Using Convolutional Neural Network'. The algotithm allows us to separate and recombine the image content and style of natural images. In another words, it is capable of extracting content information from a image and then extract style information from a famous artwork, then combine them together to produce a new image that possesses the content of the photo and the appearance of a given artwork. The key idea backed up this algorithm is to optimise an image with the objective of matching desired CNN feature distributions, which involves both the photo's content information and the artwork's style information.<br>
+CNN is a technique introduced by Gatys et al. (2015) in their paper 'Image Style Transfer Using Convolutional Neural Network'. The algotithm allows us to separate and recombine the image content and style of natural images. In another words, it is capable of extracting content information from a image and then extract style information from a famous artwork, then combine them together to produce a new image that possesses the content of the photo and the appearance of a given artwork. The key idea backed up this algorithm is to optimise an image with the objective of matching desired CNN feature distributions, which involves both the photo's content information and the artwork's style information. The team realizes the function that image style transfer mainly by cnn_paint_style function from the website about "Painting Like Van Gogh with Convolutional Neural Networks"(2016).<br>
 <br>
 cnn_paint_style() reference:<br>
-#Painting Like Van Gogh with Convolutional Neural Networks
-#Retrieved from http://www.subsubroutine.com/sub-subroutine/2016/11/12/painting-like-van-gogh-with-convolutional-neural-networks
 <br>
       
 ## GUI
@@ -40,8 +38,11 @@ Download the 'imagenet-vgg-verydeep-19' file introduced by Karen et al.(2014) in
   
   
 ## References
-1. L. A. Gatys, A. S. Ecker, and M. Bethge (Aug. 2015), “A neural algorithm of artistic style,” ArXiv e-prints.
-Retrieved from: http://openaccess.thecvf.com/content_cvpr_2016/papers/Gatys_Image_Style_Transfer_CVPR_2016_paper.pdf
+1. Painting Like Van Gogh with Convolutional Neural Networks (Nov,2016).
+   Retrieved from http://www.subsubroutine.com/sub-subroutine/2016/11/12/painting-like-van-gogh-with-convolutional-neural-networks
 
-2. Simonyan, Karen, Zisserman, & Andrew. (2015, April 10). Very Deep Convolutional Networks for Large-Scale Image Recognition. 
-Retrieved from https://arxiv.org/abs/1409.1556
+2. L. A. Gatys, A. S. Ecker, and M. Bethge (Aug. 2015), “A neural algorithm of artistic style,” ArXiv e-prints.
+   Retrieved from: http://openaccess.thecvf.com/content_cvpr_2016/papers/Gatys_Image_Style_Transfer_CVPR_2016_paper.pdf
+
+3. Simonyan, Karen, Zisserman, & Andrew. (2015, April 10). Very Deep Convolutional Networks for Large-Scale Image Recognition. 
+   Retrieved from https://arxiv.org/abs/1409.1556
